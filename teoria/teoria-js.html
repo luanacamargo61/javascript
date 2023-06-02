@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoria Javascript</title>
+</head>
+<body>
+     
+    <h1>Teoria de Javascript</h1>
+    <button onclick="Botao1()">botão</button>
+    <button onclick="Botaocor()">Alterar cor de fundo</button>
+    <button onclick="Botaonome()">Qual seu nome?</button>
+
+    <h1>Registro de cornos</h1>
+    <button onclick="cadastrarumapessoa()">cadastre-se aqui</button>
+    <p id="lista">Cornos que estão por aqui</p>
+
+
+</body>
+
+<script>
+    alert("Ola mudo!!") //aparece um box popup de alerta no navegador
+    //comentarioooo
+    /*oikkkkk
+    ipioiopuomk*/
+    //vizualizar informações sem exibir na pagina
+    console.log("Ola mundot!")
+
+    console.error("mensagem de erro")
+
+    console.warn("mensagem de alerta")
+
+    console.info("mensagem de inormação")
+    //função do botao
+    //nome da função tem q ser ingual o do onclick
+    function Botao1(){
+        alert("voce clicou no butao")
+
+    }
+    //muda a cor do fundo do body
+    function Botaocor(){
+        document.body.style.backgroundColor = "#885db0"
+    }
+    //caixa de texto pra escrever
+    function Botaonome(){
+        prompt("Qual seu nome?")
+    }
+    function cadastrarumapessoa(){
+        var var1=prompt ("Nome da nova pessoa")
+        document.getElementById ("lista").innerHTML+= `<br> &#X1F596 acabei de cadastrar <strong> ${var1} </strong> no sistema`
+    }
+//operadores aritmeticos e ordem de procedencia
+    var opSoma = 5 + 2 //operador de soma +
+    console.log(opSoma) //7
+    var opSubtracao = 5 - 2 //operador de subtração -
+    console.log (opSubtracao) //3
+    var opMultiplicacao = 5 * 2 // operador de mutiplicacao *
+    console.log (opMultiplicacao) // 10
+    var opDivisao = 5 / 2 // operador de divisao
+    console.log (opDivisao) // 2.5
+    var opExponenciacao = 5 ** 2 //operador de exponenciacao
+    console.log (opExponenciacao) //25
+    var opResto = 5 % 2 // operador de resto da divisao
+    console.log (opResto) // 1
+    //ordem de precedencia
+    var ordemPrecedencial = 5 + 3 / 2
+    console.log(ordemPrecedencial)//6.5
+    var ordemPrecedencial2 = (5+3) / 2
+    console.log(ordemPrecedencial2)//4
+   
+    //operadores racionais
+    var n1 =5
+    var n2 = 6
+    console.log (n1>n2) // > maior que
+    console.log (n1<n2) // > menor que
+    console.log (n1>=n2) // > maior ou igual que
+    console.log (n1<=n2) // > menor ou igual que
+    console.log (n1==n2) // > igual que
+    console.log (n1!=n2) // > diferente que
+
+    //estruturas condiconais
+    if (n1 > n2) {               //verificando a condiçao entre parenteses
+        //se a condiçao for verdadeira entra esse bloco
+        console.log ("o n1 é maior que o n2")
+    } else {
+        //se for falsa entra esse bloco else
+        console.log ("o n1 nao eh maior que o n2")
+    }
+    //exemplo decondição
+    var minhaIdade = 18
+    if (minhaIdade >= 16){
+        console.log ("voce pode votar")
+    } else {
+        console.log ("voce nao pode votar")
+    }
+    //operadores logicos
+    // && representa o E
+    var login= "adm"
+    var senha= "123"
+    //para entrar na condiçao true as duas condicoes precisam ser verdadeiras
+    if (login == "adm" && senha == "123") {
+        //executar esse bloco quando as condiçoes sao true
+    } else {
+        //executar esse bloco se pelo menos 1 condição for falsa
+    }
+    var media = 6
+    // operador ou || (pipe)
+    //para entrar na condiçao true pelo menos 1 condicao precisa ser verdadeiro
+    if (media == 6 || media == 5){
+        //executar esse bloco quando 1 condiçao é true pelo menos
+    } else {
+        // executar esse bloco quando nenhuma condiçao for verdadeira
+    }
+   
+    //estruturas adicionais encadeadas
+    if (media >= 7){
+        console.log("APROVADO")
+    }else if (media >=5){ //podemos fazer um if com o else
+        console.log("RECUPERAÇAO")
+    }else {
+        console.log ("REPROVADO")
+    }
+    if (media == 10){
+        console.log("otimo aluno")
+    }else if (media == 9 || media == 8) {
+        console.log ("bom aluno")
+    }else if(media == 7 || media == 6){
+        console.log("aluno mediano")
+    }else if (media == 5|| media == 4 || media == 3){
+        console.log("Aluno abaixo da media")
+    }else {
+        console.log("aluno ruim")
+    }
+    //debugger
+    //podemos utilizar o debugger para analisar o codigo linha a linha
+    //return
+    // quando queremos parar d executar uma funçao
+    var nrSorteando = parseInt(Math.random() * 100)
+    console.log (nrSorteando)
+    //Switch case
+    //é como se fosse varios if else de forma mais simples
+    var diaSemana = 3
+    switch (diaSemana){
+        case 1:
+            console.log("Hoje é domingo")
+            break //para  o switch case e nao verifica os outros
+        case 2:
+            console.log("Hoje é segunda")
+            break
+        case 3:
+            console.log("Hoje é terça")
+            break
+        case 4:
+            console.log("Hoje é quarta")
+            break
+        case 5:
+            console.log("Hoje é quinta")
+            break
+        case 6:
+            console.log("Hoje é sexta")
+            break
+        case 7:
+            console.log("Hoje é sabado")
+            break
+         }
+
+       for (var pos in frutas) {
+        console.log (frutas[pos])
+       }
+</html>
